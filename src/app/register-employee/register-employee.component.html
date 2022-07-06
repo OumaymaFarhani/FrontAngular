@@ -1,0 +1,53 @@
+<div class="container-fluid ">
+    <div class="card" style="width:50%; margin-top: 2rem ;margin-left: 20rem; margin-bottom: 5rem;">
+        <div class="card-header text-center">
+            Add new Employee
+        </div>
+      <img src="https://fj-employer-blog.s3.amazonaws.com/employer-blog/wp-content/uploads/2015/11/5-Ways-to-Analyze-Employee-Performance-1024x508.jpg" width="50" height="150" class="card-img-top" alt="...">
+      <div class="card-body">
+
+          <div class="form-group">
+            
+            <label for="nom" class="form-label">Nom</label>
+            <input [(ngModel)]="employee.nom" id="nom" type="text" class="form-control"  aria-describedby="emailHelp">
+        
+            <label for="age" class="form-label">Age</label>
+            <input [(ngModel)]="employee.age" id="age" type="number" class="form-control"  aria-describedby="emailHelp">
+        
+            <label for="adresse" class="form-label">Adresse</label>
+            <input [(ngModel)]="employee.adresse" id="adresse" type="text" class="form-control"  aria-describedby="emailHelp">
+        
+            <br/> 
+            <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="input-group">
+              
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Departement</label>
+                </div>
+               
+                <select class="custom-select" id="inputGroupSelect01">
+                  <option selected >Choose...</option>
+                  <option *ngFor="let d of dep1" >{{d}}</option>
+                 
+                </select>
+                </div>
+              </div>
+              <br/>
+              <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" class="btn btn-outline-success btn-lg" (click)="saveEmployee()">Save</button>
+              </div>
+            <div class="card-footer" *ngIf="showAlert">
+                <div class="alert alert-success" role="alert">
+                    <button class="close" (click)="closeAlert()">&times;</button>
+                    <strong>Successfully saved</strong>
+
+                </div>
+
+            </div>
+    </div>
+
+
+
+  
+
+</div>

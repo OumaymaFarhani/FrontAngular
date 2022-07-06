@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+ 
+  <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+              <th scope="col">Identifiant</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Age</th>
+              <th scope="col">Adresse</th>
+              <th scope="col">Departement</th> 
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let e of employees">
+             
+              <td>{{e.id}}</td>
+              <td>{{e.nom}}</td>
+              <td>{{e.age}}</td>
+              <td>{{e.adresse}}</td>
+               <td>{{e.departement.description}}</td> 
+              
+              <td>
+                <button type="button" class="btn btn-danger" (click)="deleteEmployee(e.id)" style="margin-right: 2rem;">Delete</button>
+                <button type="button" class="btn btn-warning" [routerLink]="['/edit-employee',e.id]" >Edit</button>
+              </td>
+            </tr>
+           
+          </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+<div class="container-fluid">
+
+ 
+    <table class="table table-light">
+          <thead class="thead-light">
+              <tr>
+                <th scope="col">Identifiant</th>
+               
+                <th scope="col">Departement</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let d of departements">
+               
+                <td>{{d.idDepartement}}</td>
+                <td>{{d.description}}</td>
+               
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="deleteDepartement(d.idDepartement)" style="margin-right: 2rem;">Delete</button>
+                <!--   <button type="button" class="btn btn-warning" [routerLink]="['/edit-employee',d.id]" >Edit</button>
+                --> </td>
+              </tr>
+              
+            </tbody>
+      </table>
+  </div>
+  <router-outlet></router-outlet>
